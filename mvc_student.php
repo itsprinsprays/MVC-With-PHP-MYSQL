@@ -2,14 +2,21 @@
 require_once "config/connect.php";
 require_once "controller/StudentController.php";
 
-$controller = new StudentController($conn); // use $conn directly
+$controller = new StudentController($conn);
 
 $action = $_GET['action'] ?? 'index';
 
-if ($action == 'store' && $_POST) {
-    $controller->store($_POST);
-} elseif ($action == 'delete') {
-    $controller->delete($_GET['id']);
-} else {
-    $controller->index();
+switch ($action) {
+    case 'store':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->store($_POST);
+        }
+        break;
+
+    case 'delete':
+        $controller->delete($_GET['id']);
+        break;
+
+    default:
+        $controller->index();
 }

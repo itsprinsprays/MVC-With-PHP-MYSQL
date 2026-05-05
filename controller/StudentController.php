@@ -20,7 +20,7 @@ class StudentController {
             $data['year_level']
         );
 
-        header("Location: view/index.php");
+        header("Location: mvc_student.php");
     }
 
     public function update($data) {

@@ -15,7 +15,7 @@
 <h2>Student List</h2>
 
 <!-- ADD FORM -->
-<form method="POST" action="index.php?action=store">
+<form method="POST" action="mvc_student.php?action=store">
     <input type="text" name="name" placeholder="Name" required>
     <input type="text" name="course" placeholder="Course" required>
     <input type="number" name="year_level" placeholder="Year Level" required>
@@ -35,12 +35,12 @@
 
 <?php foreach ($students as $s): ?>
 <tr>
-    <td><?= $s['id'] ?></td>
+    <td><?= $s['Id'] ?></td>
     <td><?= $s['name'] ?></td>
     <td><?= $s['course'] ?></td>
     <td><?= $s['year_level'] ?></td>
     <td>
-        <a href="index.php?action=delete&id=<?= $s['id'] ?>">Delete</a>
+        <a href="mvc_student.php?action=delete&id=<?= $s['Id'] ?>">Delete</a>
     </td>
 </tr>
 <?php endforeach; ?>
