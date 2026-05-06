@@ -31,12 +31,12 @@ class StudentController {
             $data['year_level']
         );
 
-        header("Location: view/index.php");
+        header("Location: mvc_student.php");
     }
 
     public function delete($id) {
         $this->student->deleteStudent($id);
 
-        header("Location: view/index.php");
+        header("Location: mvc_student.php");
     }
 }

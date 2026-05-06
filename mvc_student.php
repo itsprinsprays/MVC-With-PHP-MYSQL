@@ -16,6 +16,12 @@ switch ($action) {
     case 'delete':
         $controller->delete($_GET['id']);
         break;
+    
+    case 'update':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->update($_POST);
+        }
+        break;
 
     default:
         $controller->index();
